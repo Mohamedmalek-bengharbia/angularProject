@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="jumbotron">
+    <h2>Consulter vos vol</h2>
+ <div class="form-group">chercher votre vol ici! <input name="searchname" type="text" [(ngModel)]="searchname"
+            class="form-control"></div>
+
+    <div>
+        <app-consulter [searchnameInput]="searchname">
+        </app-consulter>
+    </div>
+
+   </div>
+</div>

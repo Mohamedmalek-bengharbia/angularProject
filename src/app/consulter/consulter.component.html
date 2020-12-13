@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Destination:</th>
+      <th scope="col">Date-Depart</th>
+      <th scope="col">Duree du sejour(en nuitée)</th>
+      <th scope="col">Date-Retour</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let vol of list">
+    <tr *ngIf="vol.destination.toLowerCase().includes(searchnameInput)|| searchnameInput==null">
+      <td>{{vol.id}}</td>
+      <td>{{vol.destination}}</td>
+      <td>{{vol.Date_dep}}</td>
+      <td>{{vol.duree}}</td>
+      <td>{{vol.Date_ret}}</td>
+      <td> <a routerLink="/modify/{{vol.id}}"><button class="fa fa-edit" style="font-size:30px;color:red"></button>
+        </a> &nbsp;
+        &nbsp;
+        <button (click)="deletevol(vol.id)" class="fa fa-trash-o" style="font-size:30px;color:red"></button>
+        <br>
+      </td>
+
+    </tr>
+  </tbody>
+
+
+</table>

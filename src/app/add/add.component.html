@@ -1,0 +1,36 @@
+<div class=" container">
+    <div class="jumbotron">
+        <h2>Reserver</h2>
+        <form #userForm="ngForm">
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <select name="pays" [(ngModel)]="vol.destination" #destination="ngModel" required>
+                    <option value="afrique">Afrique </option>
+                    <option value="europe">Europe </option>
+                    <option value="amerique">Amerique </option>
+                    <option value="australie">Australie </option>
+                    <option value="asie">Asie </option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label>Date-Depart</label>
+                <input type="date" class="form-control" name="Date_dep" [(ngModel)]="vol.Date_dep" #Date_dep="ngModel"
+                    required>
+            </div>
+            <div class="form-group">
+                <label>Duree du sejour(en nuitée)</label>
+                <input type="number " class="form-control" name="duree" [(ngModel)]="vol.duree" #duree="ngModel"
+                    required>
+            </div>
+            <div class="form-group">
+                <label>Date-Retour</label>
+                <input type="date" class="form-control" name="Date_ret" [(ngModel)]="vol.Date_ret" #Date_ret="ngModel"
+                    required>
+            </div>
+            <div class="alert alert-success" [hidden]="!show">vol added successfuly</div>
+            <button class="btn btn-success" (click)="add()" [disabled]="userForm.invalid">Reserver</button>
+        </form>
+    </div>
+</div>
+<br>
